@@ -1,0 +1,19 @@
+//Write a function that searches for an element in an array and returns the index, if the element is not present then just return -1
+
+function searchElement(arr, m) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == m) {
+            return i;
+        }
+    }
+    return -1;
+
+}
+
+let arr = [6, 3, 4, 1, 9];
+
+let result = searchElement(arr, 3);
+console.log(result);
+
+// searchElement(arr, 3) => 1
+// searchElement(arr, 5) => -1
