@@ -8,6 +8,7 @@ class Solution {
             for(int j=0; j<=jwlLength; j++){
                 if(stones.charAt(i)==jewels.charAt(j)){
                     count++;
+                    break;
                 }
             }
         }
