@@ -38,3 +38,30 @@ class Solution {
         return sentinel.next;
     }
 }
+
+
+//One Pass
+
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode sentinel = new ListNode();
+        sentinel.next = head;
+
+        ListNode firstPtr = sentinel;
+        ListNode secondPtr = sentinel;
+
+        for(int i=0; i<n; i++){
+            firstPtr= firstPtr.next;
+        }
+
+        while(firstPtr.next!=null){
+            firstPtr = firstPtr.next;
+            secondPtr = secondPtr.next;
+        }
+
+        secondPtr.next = secondPtr.next.next;
+
+        return sentinel.next;
+            
+    }
+}
