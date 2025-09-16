@@ -56,3 +56,50 @@ class Solution {
         return result;
     }
 }
+
+// Approach - 3 (Binary Search with some greedy)
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int n=nums.length;
+
+        int l=0;
+        int r=n-1;
+
+        int[] ans = {-1,-1};
+
+        //cornerCase
+        if(n==0) return ans;
+
+        //firstIndex
+        while(l<=r){
+            int m=l+(r-l)/2;
+            if(nums[m]<target){
+                l=m+1;
+            }else if(nums[m]>target){
+                r=m-1;
+            }else if(nums[m]==target){
+                ans[0]=m;
+                r=m-1;
+            }
+        }
+
+        l=0;
+        r=n-1;
+
+        //lastIndex
+        while(l<=r){
+            int m=l+(r-l)/2;
+            if(nums[m]<target){
+                l=m+1;
+            }else if(nums[m]>target){
+                r=m-1;
+            }else if(nums[m]==target){
+                ans[1]=m;
+                l=m+1;
+            }
+        }
+
+        return ans;
+        
+    }
+}
