@@ -40,3 +40,24 @@ class Solution {
         return ans;
     }
 }
+
+// Approach - 2 Recursive
+
+
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if(root==null) return new ArrayList<>();
+        traversal(root, 0, ans);
+        return ans;
+    }
+    public static void traversal(TreeNode node, int level, List<List<Integer>> ans){
+        if(ans.size()==level){
+            ans.add(new ArrayList<>());
+        }
+        ans.get(level).add(node.val);
+        if(node.left!=null) traversal(node.left, level+1, ans);
+        if(node.right!=null) traversal(node.right, level+1, ans);
+    }
+    
+}
