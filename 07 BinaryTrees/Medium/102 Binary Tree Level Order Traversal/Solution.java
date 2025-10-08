@@ -59,5 +59,4 @@ class Solution {
         if(node.left!=null) traversal(node.left, level+1, ans);
         if(node.right!=null) traversal(node.right, level+1, ans);
     }
-    
 }
