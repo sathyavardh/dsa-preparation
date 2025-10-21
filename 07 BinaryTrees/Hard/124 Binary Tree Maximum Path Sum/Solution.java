@@ -13,6 +13,7 @@
  *     }
  * }
  */
+
 class Solution {
     private int maxSumPath = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
