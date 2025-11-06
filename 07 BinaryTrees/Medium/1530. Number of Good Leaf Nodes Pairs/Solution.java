@@ -18,7 +18,7 @@ class Solution {
     int limit;
     public int countPairs(TreeNode root, int distance) {
         limit = distance;
-        dfs(root);
+        dfs(root); 
         return count;
     }
     public List<Integer> dfs(TreeNode curr){
